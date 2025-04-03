@@ -1,28 +1,20 @@
 pipeline {
-    agent any
+    agent any  // Make sure an agent is defined
     stages {
-        stage('Clone Repo') {
+        stage('Build') {
             steps {
-                git branch: ‘main’, url: 'https://github.com/velvignesh6404/B3-Devops.git'
+                echo 'Building the project...'
             }
         }
-
-    stages {
-        stage('bulding ') {
+        stage('Test') {
             steps {
-                echo 'Building '
+                echo 'Running tests...'
             }
         }
-        stage('Testing  ') {
+        stage('Deploy') {
             steps {
-                echo 'Testing '
-            }
-        }
-        stage('Deploying') {
-            steps {
-                echo 'Deploying '
+                echo 'Deploying the project...'
             }
         }
     }
-}
 }
